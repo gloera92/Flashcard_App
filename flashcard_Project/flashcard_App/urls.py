@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
 
-app_name = 'flashcard_app'
+
 urlpatterns = [
-    path('', views.index, name='index')
+    path('flashcard_app/', views.FlashcardList.as_view()),
+    path('flashcard_app/', views.FlashcardCollection.as_view()),
 ]
