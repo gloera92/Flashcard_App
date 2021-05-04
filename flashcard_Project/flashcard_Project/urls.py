@@ -1,4 +1,4 @@
-"""flashcard_Project URL Configuration
+"""flashcard_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('flashcard_app/', include('flashcard_app.urls')),
+    path('', RedirectView.as_view(url='/flashcard_app/'))
 ]

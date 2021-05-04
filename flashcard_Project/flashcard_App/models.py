@@ -4,14 +4,15 @@ from django.db import models
 
 
 class Flashcard(models.Model):
-    flashcard = models.CharField(max_length=50)
+    word = models.CharField(max_length=50)
+    definition = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.flashcard
+        return self.word
 
 
 class Collections(models.Model):
-    collections = models.CharField(max_length=50)
+    collection = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.collections
+        return self.collection
